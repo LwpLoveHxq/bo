@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留痕</title>
+
+    <link href="css/Font_Style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/All_Styles.css">
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+    <style>
+body{ 
+    background:#fff;
+}
+*{
+    padding: 0; 
+    margin: 0;
+}
+#container{ 
+    padding-top: 100px;
+    width:1220px; 
+    margin: 0 auto;
+}
+#container li{ 
+    position:relative;
+    width: 400px;
+    height: 260px; 
+    text-align: center; 
+    margin:10px 10px 10px 0; 
+    float: left; 
+    overflow: hidden;
+}
+#container li p{ 
+	position: relative;
+    height: 100%;
+    bottom: 100%;
+    z-index: -1;
+}
+#container li .img{ 
+    width: 400px; 
+    height: 260px; 
+    display: block;
+    transition:.5s ease-in;
+}
+#container li:hover .img{ 
+    transform:scale(1.1,1.1);
+}
+#container li p i{ 
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    left: 0; 
+    top: 0;
+    background: #00000094;
+    padding: 50px;
+}
+#container li p i span{ 
+    position: relative;
+    top: 50%;
+}
+
+.pb_container {
+    padding-top: 1100px;
+	width:1200px;
+	margin:20px auto;
+	columns:4;
+	column-gap:40px;
+}
+.pb_container .box {
+	width:100%;
+	margin:0 0 20px;
+	padding:10px;
+	background:#fff;
+	overflow:hidden;
+	break-inside:avoid;
+}
+.pb_container .box img {
+	max-width:100%;
+}
+@media(max-width:998px) {
+	.pb_container {
+        padding-top: 1100px;
+        columns:3;
+        width:calc(100% - 40px);
+    }
+}@media(max-width:768px) {
+    .pb_container {
+        padding-top: 1100px;
+        columns:2;
+    }
+}
+.tour_imgmax{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    text-align: center;
+    display: none;
+    background-color: rgba(240, 255, 255, 0.514);
+}
+.im{
+    width: 90%;
+    height: 90%;
+    margin-top: 5%;
+    margin-top: 50px; 
+    object-fit: contain; 
+    animation: imto 1s normal forwards ease-in-out; 
+}
+@keyframes imto{
+    0%{
+        transform: scale(0.5);  
+    }
+    80%{
+        transform: scale(1.05); 
+    }
+    100%{
+        transform: scale(1); 
+    }
+}
+
+    </style>
+</head>
+<body class="gdt" style="background-image: url(images/bj.jpg);">
+        
+    <!-- 导航栏 -->
+    <nav class="head">
+        <div class="top-menus" style="z-index: 100;">
+            <div class="frame">
+                <div class="carrier">
+                    <ul>
+                        <li class=""><a href="index.html">主页</a></li>
+                        <li class=""><a href="Work_study.html">一篇文字</a></li>
+                        <li class="current"><a href="other.html">历程</a></li>
+                        <li class=""><a href="next_door.html">隔壁村子</a></li>
+                        <li class=""><a href="about_me.html">关于我</a></li>
+                    </ul>
+                </div>
+                <div class="carrier" style="width: 41%;">
+                    <ul style=" text-align: right;">
+                        <li>最后一次更新于：<a href="home.html">2020/11/19 (点此返回初始页)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+        
+    <!-- 主体 -->
+    <div style="position:absolute;z-index: -1; width: 100%; background-color: rgba(233, 233, 220); padding-bottom: 120px;">
+        <ul id="container">
+            
+            <li>
+                <img class="img" src="images/背景/初始页背景.jpg">
+                <p>
+                    <i><span>我突如其来的脾气，只因积攒了太多的委屈。</span></i>
+                </p>
+            </li>
+
+            <li>
+                <img class="img" src="images/背景/初始页背景2.jpg">
+                <p>
+                    <i><span>每个人都希望重新开始，可是当真正重新开始的时候，大同小异。</span></i>
+                </p>
+            </li>
+
+            <li style="width:400px; height:530px; margin:10px 0 0 0;">
+                <img class="img" src="images/相册/img1.jpg"  style="width:400px; height:530px">
+                <p>
+                    <i><span>原本以为闭上眼睛切洋葱就不会掉眼泪了，可是切到手的那一刻我还是哭了。</span></i>
+                </p>
+            </li>
+
+            <li style="margin-top:-260px;">
+                <img class="img" src="images/背景/影评背景.png">
+                <p>
+                    <i><span>我鼓足勇气去面对现实，却发现勇气，真的只是气而已。</span></i>
+                </p>
+            </li>
+
+            <li style="margin-top:-260px;">
+                <img class="img" src="images/背景/隔壁村子背景.jpg">
+                <p>
+                    <i><span>万事开头难，中间难，到最后都难。</span></i>
+                </p>
+            </li>
+
+            <li style="  margin:0 10px 10px 0;">
+                <img class="img" src="images/背景/隔壁村子背景2.jpg">
+                <p>
+                    <i><span>如果你从来就没成功过，还怕什么失败？</span></i>
+                </p>
+            </li>
+
+            <li style="  margin:0 10px 10px 0;">
+                <img class="img" src="images/背景/首页背景.jpg">
+                <p>
+                    <i><span>人啊，长了颗红楼梦的心，却生活在水浒的世界，想交些三国里的桃园弟兄，却总遇到些西游记里的妖魔鬼怪。</span></i>
+                </p>
+            </li>
+
+            <li style="  margin:0 ">
+                <img class="img" src="images/背景/初始页背景3.jpg">
+                <p>
+                    <i><span>真正努力过的人才知道，智商的差距是不可逾越的。其实家庭背景才是不可逾越的！</span></i>
+                </p>
+            </li>
+
+        </ul> 
+    </div>
+<div style="position: absolute;text-align: center;width: 100%;background-color: rgb(27, 12, 41);z-index: -2;padding-bottom: 50px;">
+    <div class="pb_container">
+
+        <div class="box">
+            <img src="images/相册/a1.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/a2.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/a3.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/a4.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/a5.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/a6.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/a7.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/a8.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/a9.jpg" alt="">
+        </div>
+
+        <div class="box">
+            <img src="images/相册/b1.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/b2.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/b3.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/b4.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/b5.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/b6.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/b7.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/b8.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/b9.jpg" alt="">
+        </div>
+
+        <div class="box">
+            <img src="images/相册/c1.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/c2.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/c3.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/c4.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/c5.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/c6.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/c7.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/c8.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/c9.jpg" alt="">
+        </div>
+        
+        <div class="box">
+            <img src="images/相册/d1.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/d2.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/d3.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/d4.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/d5.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/d6.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/d7.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/d8.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/d9.jpg" alt="">
+        </div>
+
+        <div class="box">
+            <img src="images/相册/e1.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/e2.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/e3.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/e4.jpg" alt="">
+        </div>
+        <div class="box">
+            <img src="images/相册/e5.jpg" alt="">
+        </div>
+
+    </div>
+</div>
+
+    <!-- 返回顶部 -->
+    <div><p class="dvp">返回顶部</p></div>
+
+    <div class="tour_imgmax">
+        <img class="im" src="">
+    </div>
+
+    <script>
+        $(function(){
+            $('html').animate({scrollTop:$(".top-menus").height()*2},1000);
+        })
+        
+        $("#container li").mouseover (function() {
+            $(this).find("p").css("z-index","1");
+        })
+        $("#container li").mouseout (function() {
+            $(this).find("p").css("z-index","-1");
+        })
+        
+        $("img").click(function(){
+            $(".im").attr("src",$(this).attr('src'))
+            $(".tour_imgmax").css("display","block");
+        });
+        $(".tour_imgmax").click(function(){
+			$(".tour_imgmax").css("display","none");
+        });
+
+    </script>
+</body>
+</html>

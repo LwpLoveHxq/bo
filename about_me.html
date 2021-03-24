@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我</title>
+
+    <link href="css/Font_Style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/All_Styles.css">
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+	<style>
+		.about_container {
+			width: 100%;
+			max-width: 1200px;
+			min-width: 320px;
+			margin: auto;
+			padding-top: 100px;
+			overflow: hidden;
+			margin-bottom: 70px;
+		}
+		.about_cont {
+			background-color: rgba(255,255,255,0.5);
+			color: #666;
+			padding: 15px;
+			margin: 15px;
+		}
+		.about_cont hr{
+			border:none;
+			border-bottom:1px solid #aaa; 
+			margin-bottom:15px;
+		}
+		.about_header {
+			text-align: center;
+		}
+		.about_header img {
+			border-radius: 100%;
+			border: 3px solid rgba(238, 238, 238, 0.6);
+			width: 125px;
+			height: 125px;
+			margin-top: -75px;
+			
+		}
+		/* 头像旋转 */
+		.about_container img:hover{
+			animation: round_animate 0.8s infinite; 
+			animation-iteration-count:1;
+		}
+		@keyframes round_animate {
+			to{
+				transform: rotate(360deg);
+			}
+		}
+
+		.about_container #lk{
+			animation: toptoptop 4s normal forwards ease-in-out; 
+		}
+		@keyframes toptoptop {
+			0%{
+				transform: translateY(200px);
+			}
+			40%{
+				transform: translateY(-740px);
+			}
+			50%{
+				transform: translateY(-715px);
+			}
+			100%{
+				transform: translateY(0px);
+			}
+		}
+
+		.about_cont {
+			animation: ababab 4s normal forwards ease-in-out; 
+		}
+		@keyframes ababab {
+			0%{
+				transform: translateY(715px);
+			}
+			50%{
+				transform: translateY(715px);
+			}
+
+			100%{
+				transform: translateY(0px);
+			}
+		}
+
+		.about_my {
+			display: inline-block;
+		}
+		.about_my a{
+			font-size: 20px;
+		}
+		.about_header ul {
+			padding-left: 15px;
+		}
+		ul, li {
+			list-style: none;
+		}
+		.about_header ul li {
+			float: left;
+			padding: 10px;
+		}
+		.about_address {
+			color: #000;
+			text-align: left;
+			padding-left: 38px;
+			font-size: 18px !important;
+			padding-bottom: 4px;
+		}
+		.about_detail p {
+			text-indent: 2em;
+			letter-spacing: 5px;
+			padding: 2px;
+			color: #000;
+		}
+		
+	</style>
+
+</head>
+<body class="gdt" style="background-image: url(images/背景/首页背景.jpg);background-attachment: fixed; background-color: rgba(250, 235, 215, 0.726);">
+        
+	<!-- 导航栏 -->
+	<nav class="head">
+        <div class="top-menus" style="z-index: 100;">
+            <div class="frame">
+                <div class="carrier">
+                    <ul>
+                        <li class=""><a href="index.html">主页</a></li>
+                        <li class=""><a href="Work_study.html">一篇文字</a></li>
+                        <li class=""><a href="other.html">历程</a></li>
+                        <li class=""><a href="next_door.html">隔壁村子</a></li>
+                        <li class="current"><a href="about_me.html">关于我</a></li>
+                    </ul>
+                </div>
+                <div class="carrier" style="width: 41%;">
+                    <ul style=" text-align: right;">
+                        <li>最后一次更新于：<a href="home.html">2020/11/19 (点此返回初始页)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+        
+		<!-- 主体 -->
+		
+		<div class="about_container">
+			<div class="about_cont">
+				<div class="about_header">
+					<div id="lk">
+						<img src="images/头像.jpg"><br>
+					</div>
+					
+					<div class="about_my">
+						<a>不高兴先生</a>
+						<ul>
+							<li>00后</li>
+							<li>HTML</li>
+							<li>JAVA</li>
+							<li>普通人</li>
+						</ul>
+					</div>
+					<div class="about_address">中国 · 湖南</div>
+				</div>
+				<hr/>
+				<div class="about_detail">
+					<p>男，00后，忽冷忽热的水瓶座.</p>
+					<p>计算机专业大三在读</p>
+					<p>对未来很迷茫，但依然充满信心。</p>
+					<br>
+				</div>
+				<div class="about_address">关于本人</div>
+				<hr/>
+				<div class="about_detail">
+					<p>喜欢唱歌，尽管没有听众。</p>
+					<p>喜欢旅行，即使没有条件。</p>
+					<p>内向？外向？我也不知道。</p>
+					<p>建站初心是为了巩固巩固所学知识，加深理解.</p>
+					<p>不喜欢解释，有时候是因为懒，有的时候是不想别人太了解自己.</p>
+					<p>有时候很热情，有时候冷漠，喜欢发呆，发呆的时候不知道在想什么.</p>
+					<p>一个准备毕业的java小菜鸡！虽然是小菜鸡，但是却有一个成为大牛的心，所以想用这个博客记录下成长过程。</p>
+					<br>
+				</div>
+				<div class="about_address">关于博客</div>
+				<hr/>
+				<div class="about_detail">
+					<p>博客的意义一是记录、另一个是交流(分享)</p>
+					<p>记录自己对生活、世界的看法</p>
+					<p>你可能不认同、反对，但无关紧要</p>
+					<p>如果对你有一丝共鸣</p>
+					<p>他的意义就已经达到</p>
+					<p>愿能成为温暖又坚强的人。</p>
+					<br>
+				</div>
+			</div>
+		</div>
+
+        <!-- 返回顶部 -->
+        <div><p class="dvp">返回顶部</p></div>
+</body>
+</html>

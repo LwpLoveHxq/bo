@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+
+	<link href="css/Font_Style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/All_Styles.css">
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        .say_writing{
+                background-color: #e4e4e5b7;
+                box-shadow: 0 0 20px 5px rgb(112, 112, 112);
+                margin: 0 auto;
+                margin-top: 30px;
+                width: 950px;
+                min-height: 500px;
+                height: 100%;
+                border-radius: 20px;
+                padding: 20px;
+                animation: writ 2s normal forwards ease-in-out; 
+        }
+        @keyframes writ{
+                0%{
+			transform: scale(0.3);  
+		}
+		80%{
+			transform: scale(1.03);  
+		}
+		100%{
+			transform: scale(1);  
+		}
+        }
+        
+        .say_nav {
+                text-align: center;
+                margin: 0 auto;
+                width: 30%;
+                background-color: rgba(0,0,0,0.5);
+                color: #fff;
+                border-radius: 15px;
+                font-family: 'Sacramento', cursive;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                margin-bottom: 1rem;
+                box-shadow: 0 0 20px 5px rgb(112, 112, 112);
+                animation: saynav 1s normal forwards ease-in-out; 
+        }
+        
+        @keyframes saynav{
+                0%{
+			transform: translateY(-315px);
+		}
+		80%{
+			transform: translateY(20px);
+		}
+		100%{
+			transform: translateY(0px);
+		}
+        }
+
+        .say_word{
+                font-size: 1.1rem; 
+                font-family: 'Sacramento', cursive; 
+                box-shadow: 0 0 20px 1px rgb(112, 112, 112); 
+                background-color: #e4e4e5b7;
+                padding: 15px;
+                width: 400px; 
+                margin: 0 auto;
+                text-align: center;
+                color: #000;
+                animation: wordt 1.5s normal forwards ease-in-out; 
+        }
+        @keyframes wordt{
+                0%{
+			transform: translateY(-215px);
+		}
+		80%{
+			transform: translateY(20px);
+		}
+		100%{
+			transform: translateY(0px);
+		}
+        }
+
+        #say_content{
+                padding-top: 10px;
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+                
+        }
+        
+        #say_post{
+                text-align: center;
+                animation: post 2s normal forwards ease-in-out; 
+        }
+        @keyframes post{
+                0%{
+			transform: translateY(415px);
+		}
+		80%{
+			transform: translateY(-20px);
+		}
+		100%{
+			transform: translateY(0px);
+		}
+        }
+        .say_edit{
+                background-color: #e4e4e5b7;
+                font-size: 1.2rem;
+                padding: 10px;
+                width: 70%;
+                height: 200px;
+                font-family: "宋体";
+                box-shadow: 0 0 20px 5px rgb(112, 112, 112);
+                margin: 20px;
+        }
+        .say_fb{
+                font-family: 'Sacramento', cursive;
+                background-color: blanchedalmond;
+                font-size: 1rem;
+                padding: 5px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px 1px rgb(112, 112, 112);
+                border-color:rgba(255, 235, 205, 0);
+                margin-bottom: 10px;
+                animation: fb 2.5s normal forwards ease-in-out; 
+        }
+        @keyframes fb{
+                0%{
+			transform: scale(0.3);  
+		}
+		80%{
+			transform: scale(1.1);  
+		}
+		100%{
+			transform: scale(1);  
+		}
+        }
+        #say_comment{
+                animation: comment 3s normal forwards ease-in-out; 
+        }
+        @keyframes comment{
+                0%{
+			transform: scale(0);  
+		}
+                50%{
+                        transform: scale(0);  
+                }
+		80%{
+			transform: scale(1.1);  
+		}
+		100%{
+			transform: scale(1);  
+		}
+        }
+
+        #say_comment p{
+                font-size: 1.1rem;
+                font-family: "宋体";
+                box-shadow: 0 0 10px 1px rgb(112, 112, 112);
+                background-color: #e4e4e5b7;
+                padding: 5px;
+                width: 80%;
+                margin: 20px auto;
+                padding: 15px;
+                word-wrap:break-word;
+                color: rgba(0, 0, 0, 0.74);
+                animation: commentp 1s normal forwards ease-in-out; 
+        }
+        @keyframes commentp{
+                0%{
+			transform: scale(0.8);  
+		}
+                
+		100%{
+			transform: scale(1);  
+		}
+        }
+        
+        .say_datetime{
+                padding-left: 75%;
+        }
+
+    </style>
+
+</head>
+<body style="background-image: url(images/背景/留言.jpg);background-attachment: fixed; background-color: rgba(250, 235, 215, 0.726);">
+    	<!-- 导航栏 -->
+        <nav class="head">
+            <div class="top-menus" style="z-index: 100;">
+                <div class="frame">
+                    <div class="carrier">
+                        <ul>
+                            <li class=""><a href="index.html">主页</a></li>
+                            <li class=""><a href="Work_study.html">一篇文字</a></li>
+                            <li class=""><a href="other.html">历程</a></li>
+                            <li class="current"><a href="next_door.html">隔壁村子</a></li>
+                            <li class=""><a href="about_me.html">关于我</a></li>
+                        </ul>
+                    </div>
+                    <div class="carrier" style="width: 41%;">
+                        <ul style=" text-align: right;">
+                            <li>最后一次更新于：<a href="home.html">2020/11/19 (点此返回初始页)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主体 -->
+        <div style="padding-top: 100px;">
+            <div class="say_nav">
+                <h1 style="padding-bottom: 10px;">留言板</h1>
+                <h3 style="color: rgb(255, 255, 255); margin: 0;font-size: 1.1rem;">是无形的桥梁，亦是倾诉的树洞</h3>
+            </div>
+            <div class="say_writing">
+                <p class="say_word">
+                    这里是用来留下你的足迹的哦<br>
+                    可以是友情链接<br>
+                    或者你想分享的一切东西<br>
+                    在这个互不相识的地方尽情的诉说<br>
+                </p>
+                <div id="say_content">
+                    <div id="say_post">
+                            <textarea class="say_edit"></textarea><br>
+                            <input id="say_postBt" type="button" class="say_fb" value="发表评论"/><br>
+                            <input id="say_clearBt" type="button" value="清空所有数据(正式开通后隐藏)"/>
+                    </div>
+                    <div id="say_comment"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- 返回顶部 -->
+        <div><p class="dvp">返回顶部</p></div>
+
+        <script type="text/javascript">
+            var Storage =
+            {
+                    saveData:function(){//保存数据
+                            var data = document.querySelector("#say_post textarea");//querySelector指获取文档中 id="xxx" 的元素
+                            if(data.value != "")//当数据不为空时
+                            {
+                                    var time = new Date().getTime() + Math.random() * 5;//getTime是Date对象中的方法，作用是返回 1970年01月01日至今的毫秒数
+                                    localStorage.setItem(time, data.value + "|" + this.getDateTime());//将毫秒数存入Key值中，可以降低Key值重复率，getDateTime拿到系统时间 ；localStorage.setItem(key,value)：将value存储到key字段
+                                    //localStorage是本地储存    
+                                    data.value = "";//清空指定元素
+                                    this.writeData();//输出
+                            }else{
+                                    alert("请填写您的留言！");
+                            }
+                    },
+                    writeData:function()//输出数据
+                    {
+                            var dataHtml = "", data = "";
+                            for(var i = localStorage.length-1; i >= 0; i--)//效率更高的循环方法
+                            {
+                                    data = localStorage.getItem(localStorage.key(i)).split("|");//获取指定key本地存储的值，split把字符串分割成字符串数组
+                                    dataHtml += "<p><span class=\"say_msg\">&emsp;&emsp;" + data[0] + "</span><br><span class=\"say_datetime\">" + data[1] + "</span></p>";
+                            }
+                            document.getElementById("say_comment").innerHTML = dataHtml;//向对象插入内容。
+                    },
+                    clearData:function()//清空数据
+                    {
+                            if(localStorage.length > 0)
+                            {
+                                    if(window.confirm("清空后不可恢复，是否确认清空？(博客开放后此按钮将只管理员可见)")){
+                                            localStorage.clear();//数据清空
+                                            this.writeData();
+                                    }
+                            }else{
+                                    alert("没有需要清空的数据！");
+                            }
+                    },
+                    getDateTime:function()//获取日期时间，例如 2012-03-08 12:58:58
+                    {
+                            var isZero = function(num)//私有方法，自动补零
+                            {
+                                    if(num < 10){
+                                            num = "0" + num;
+                                    }
+                                    return num;
+                            }
+                           
+                            var d = new Date();
+                            return d.getFullYear() + "-" + isZero(d.getMonth() + 1) + "-" + isZero(d.getDate()) + " " + isZero(d.getHours()) + ":" + isZero(d.getMinutes()) + ":" + isZero(d.getSeconds());
+                            //拿到时间，年-月-日 时：分：秒。
+                    }           
+            }
+            window.onload = function()
+            {
+                    Storage.writeData();//当打开页面的时候，先将localStorage中的数据输出一边，如果没有数据，则输出空
+                    document.getElementById("say_postBt").onclick = function(){Storage.saveData();}//发表评论按钮添加点击事件，作用是将localStorage中的数据输出
+                    document.getElementById("say_clearBt").onclick = function(){Storage.clearData();}//清空所有已保存的数据
+            }
+            </script>
+</body>
+</html>

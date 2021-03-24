@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影视推荐</title>
+
+    <link href="css/Font_Style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/All_Styles.css">
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <style>
+        .Movies_introduce{
+            padding: 10px;
+            background: #f5f5f585;
+            font-size:13px;
+            font: 12px Helvetica,Arial,sans-serif;
+            line-height: 1.62;
+            margin: 0 auto;
+            width: 600px;
+            margin-top: 10px;
+        }
+        .Movies_content {
+            padding: 20px;
+            background: #ecececf0;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        }
+        .Movies_Jump {
+            width: 100px;
+            float: right;
+            font-size: 12px;
+            margin-top: 30px;
+            /* position: relative; */
+        }
+        .Movies_title {
+            display: block;
+            color: #9b9b9b;
+            font-size: 13px;
+        }
+        .Movies_Jump a {
+            display: block;
+            margin-top: 10px;
+            line-height: 16px;
+            color: #37a;
+            text-decoration: none;
+        }
+        .Movies_Jump a img {
+            height: 14px;
+            width: 14px;
+            vertical-align: top;
+            border-radius: 100%;
+        }
+        .Movies_source {
+            color: rgb(43, 43, 43);
+            margin-bottom: 10px;
+        }
+        .Movies_post {
+            width: 100px;
+            max-height: 150px;
+            /* overflow: hidden; */
+            float: left;
+            margin-right: 20px;
+            /* box-shadow: 0 0 1px rgba(0,0,0,0.1); */
+        }
+        img {
+            max-width: 100px;
+        }
+        .Movies_tp{
+            text-align: center; 
+            padding-bottom: 10px;
+            color: black;
+        }
+        .Movies_personal{
+            color: black;
+            display: none;
+        }
+        .Movies_personal p{
+            word-wrap: break-word; 
+            word-break: break-all;
+            font-size: 14px;
+            line-height:1.8em;
+        }
+        .Movies_personalto .Movies_personal{
+            display: block;
+        }
+        .Movies_frame{
+            padding-top: 20px;
+            margin-top: 50px;
+            width: 630px;
+            padding-bottom: 30px;
+            height: 100%;
+            border-radius: 10px;
+            background-color: #f5f5f5a3;
+            border: 1px solid #d2d2d2;
+            box-shadow: 0 0 1px 2px #e8e8e8;
+        }
+        .frame1{
+            animation: frame1 1s normal forwards ease-in-out; 
+        }
+        .frame2{
+            animation: frame2 1s normal forwards ease-in-out; 
+        }
+        @keyframes frame2{
+            0%{
+				transform: translateX(-600px);
+				opacity:0;
+			}
+			50%{
+				opacity:0;
+			}
+    		100%{
+				transform: translateX(0px);
+				opacity:1;
+			}
+        }
+        @keyframes frame1{
+            0%{
+				transform: translateX(600px);
+				opacity:0;
+			}
+			50%{
+				opacity:0;
+			}
+    		100%{
+				transform: translateX(0px);
+				opacity:1;
+			}
+        }
+    </style>
+
+</head>
+<body class="gdt" style="background-image: url(images/背景/影评背景.png);background-attachment: fixed;">
+        
+	<!-- 导航栏 -->
+    <nav class="head">
+        <div class="top-menus" style="z-index: 100;">
+            <div class="frame">
+                <div class="carrier">
+                    <ul>
+                        <li class=""><a href="index.html">主页</a></li>
+                        <li class="current"><a href="Work_study.html">一篇文字</a></li>
+                        <li class=""><a href="other.html">历程</a></li>
+                        <li class=""><a href="next_door.html">隔壁村子</a></li>
+                        <li class=""><a href="about_me.html">关于我</a></li>
+                    </ul>
+                </div>
+                <div class="carrier" style="width: 41%;">
+                    <ul style=" text-align: right;">
+                        <li>最后一次更新于：<a href="home.html">2020/11/19 (点此返回初始页)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+        
+		<!-- 主体左 -->
+        <div class="Movies_frame frame1" style="float: left; margin-left: 14%;">
+            <p class="Movies_tp">豆瓣推荐TOP5</p>
+            <div class="Movies_introduce">
+                <div class="Movies_content">
+                    <div class="Movies_Jump">
+                        <span class="Movies_title">播放全片</span>
+                        <a href="https://www.bilibili.com/bangumi/play/ss28274?bsource=douban"><span><img src="images/图标/bilibili.png"></span> 哔哩哔哩</a>
+                        <a href="https://www.iqiyi.com/v_19rra0h3wg.html?vfm=m_331_dbdy&fv=4904d94982104144a1548dd9040df241"><span><img src="images/图标/爱奇艺.png"></span> 爱奇艺</a>
+                        <a href="https://v.qq.com/x/cover/1o29ui77e85grdr.html?ptag=douban.movie"><span><img src="images/图标/腾讯视频.png"></span> 腾讯视频</a>
+                        <a href="https://v.youku.com/v_show/id_XMjgwNDkwNzE2.html?tpa=dW5pb25faWQ9MzAwMDA4XzEwMDAwMl8wMl8wMQ&refer=esfhz_operation.xuka.xj_00003036_000000_FNZfau_19010900"><span><img src="images/图标/优酷.png"></span> 优酷</a>
+                    </div>
+                    <div class="Movies_source">TOP1</div>
+                    <div class="Movies_post">
+                        <a href="https://movie.douban.com/subject/1292052/">
+                        <img style="height: 141px;" src="images/插图/影评/肖申克的救赎.jpg"></a>
+                    </div>
+                    <div>
+                        <a href="https://movie.douban.com/subject/1292052/">
+                        <img style="width: 16px; vertical-align: text-top;" src="images/图标/播放.png">
+                        肖申克的救赎 The Shawshank Redemption</a>
+                    </div>
+                    <div>
+                        <span>豆瓣推荐指数&nbsp9.7</span>
+                    </div>
+                    <div>
+                        导演: 弗兰克·德拉邦特<br/>
+                        主演: 蒂姆·罗宾斯 / 摩根·弗里曼<br/>
+                        类型: 剧情 / 犯罪<br/>
+                        制片国家/地区: 美国<br/>
+                        片长: 142分钟<br/>
+                        上映日期: 1994-09-10
+                    </div>
+                    <div class="Movies_personal">
+                        <p>个人赏析:</p>
+                        <p> &emsp;&emsp;其实你没那么渴望自由--附离
+                            <br/>&emsp;&emsp;N久前看的片子，当时觉得真不错。具体不错在哪里？或许是因为结局不错，主人公最终成功越狱到达梦想之地，观影者借以给自己希望，以为自己也能达到自由的彼处。
+                            <br/>&emsp;&emsp;或许给这部片那么多的五星是因为它讲出了我们对自由的渴望并实现了我们自由的希望。可看了两遍后发觉其实它给了大多数无天赋无毅力的普通人无法自由的绝望。
+                            <br/>&emsp;&emsp;那些口口声声说着向往自由，抱怨体制化，实则心甘情愿地享受着体制化带来的好处（既然体制自有体制的自由，那就请别抱怨了）； 
+                            <br/>&emsp;&emsp;我们叫喊着崇尚自由，却在节假日欢笑着挤在人堆里去动物园海洋馆看那些被关起来的动物和它们的表演，以为动物都爱被囚禁起来给人看给人表演呢，（不知有多少动物是习惯了这样的生存方式如同影片中在监狱呆了一辈子的BROOKS，又有多少是真的爱show），
+                            <br/>&emsp;&emsp;当看到天鹅只能在动物园沟渠大小的水域中十秒一个来回地游来游去，飞鸟们被罩在三四米高的网下面无法飞翔，海豚不是在大海里自由跳跃，这时如果我们还能欢笑，那就请别说我们多渴望多尊重自由，也不配给这部电影五星。
+                            <br/>&emsp;&emsp;——以此文写给自己，激励自己和那些同样缺乏或快失去毅力的人，如Andy般坚持下去，终有一天获得自己内心想要的那份自由！
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="Movies_introduce">
+                <div class="Movies_content ">
+                    <div class="Movies_Jump">
+                        <span class="Movies_title">播放全片</span>
+                        <a href="https://www.bilibili.com/bangumi/play/ep317650"><span><img src="images/图标/bilibili.png"></span> 哔哩哔哩</a>
+                        <a href="https://www.iqiyi.com/v_19rrho3150.html?vfm=m_331_dbdy&fv=4904d94982104144a1548dd9040df241"><span><img src="images/图标/爱奇艺.png"></span> 爱奇艺</a>
+                        <a href="https://v.qq.com/x/cover/j3czmhisqin799r.html?ptag=douban.movie"><span><img src="images/图标/腾讯视频.png"></span> 腾讯视频</a>
+                        <a href="https://v.youku.com/v_show/id_XMzA1NTAzNjAwMA==.html?tpa=dW5pb25faWQ9MzAwMDA4XzEwMDAwMl8wMl8wMQ&refer=esfhz_operation.xuka.xj_00003036_000000_FNZfau_19010900"><span><img src="images/图标/优酷.png"></span> 优酷</a>
+                    </div>
+                    <div class="Movies_source">TOP2</div>
+                    <div class="Movies_post">
+                        <a href="https://movie.douban.com/subject/1291546/">
+                        <img src="images/插图/影评/霸王别姬.jpg"></a>
+                    </div>
+                    <div>
+                        <a href="https://movie.douban.com/subject/1291546/">
+                        <img style="width: 16px; vertical-align: text-top;" src="images/图标/播放.png">
+                        霸王别姬</a>
+                    </div>
+                    <div>
+                        <span>推荐指数&nbsp9.6</span>
+                    </div>
+                    <div>
+                        导演: 陈凯歌<br>
+                        主演: 张国荣 / 张丰毅 / 巩俐 / 葛优<br>
+                        类型: 剧情 / 爱情 / 同性<br>
+                        制片国家/地区: 中国大陆 / 中国香港<br>
+                        上映日期: 1993-01-01<br/>
+                        片长: 171分钟
+                    </div>
+                    <div class="Movies_personal">
+                        <br/>
+                        <p>个人赏析:</p>
+                        <p> &emsp;&emsp;姬别霸王
+                            <br/>&emsp;&emsp;这真的不是电影，而是人生。
+                            <br/>&emsp;&emsp;如此真实深刻地反映了从抗战前夕至文革的那段历史时期下命运凄惨的人们，渗透在每一个细节，包括那个不能忍受戏班虐打的孩子，而文革中六亲不认，人格扭曲更是展现到了极致。
+                            <br/>&emsp;&emsp;不疯魔不成活，人戏不分，现实的他也是如此
+                            <br/>&emsp;&emsp;最终是姬别霸王。只因虞姬是真虞姬，霸王是假霸王。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="Movies_introduce">
+                <div class="Movies_content">
+                    <div class="Movies_Jump">
+                        <span class="Movies_title">播放全片</span>
+                        <a href="https://www.bilibili.com/bangumi/play/ss25568?bsource=douban"><span><img src="images/图标/bilibili.png"></span> 哔哩哔哩</a>
+                        <a href="https://www.iqiyi.com/v_19rrk3u264.html?vfm=m_331_dbdy&fv=4904d94982104144a1548dd9040df241"><span><img src="images/图标/爱奇艺.png"></span> 爱奇艺</a>
+                        <a href="https://v.qq.com/x/cover/r6hc2kqgvnmiejn.html?ptag=douban.movie"><span><img src="images/图标/腾讯视频.png"></span> 腾讯视频</a>
+                        <a href="https://v.youku.com/v_show/id_XMTMzMDI2NjUzNg==.html?tpa=dW5pb25faWQ9MzAwMDA4XzEwMDAwMl8wMl8wMQ&refer=esfhz_operation.xuka.xj_00003036_000000_FNZfau_19010900"><span><img src="images/图标/优酷.png"></span> 优酷</a>
+                    </div>
+                    <div class="Movies_source">TOP3</div>
+                    <div class="Movies_post">
+                        <a href="https://movie.douban.com/subject/1292720/">
+                        <img style="height: 141px;" src="images/插图/影评/阿甘正传.jpg"></a>
+                    </div>
+                    <div>
+                        <a href="https://movie.douban.com/subject/1292720/">
+                        <img style="width: 16px; vertical-align: text-top;" src="images/图标/播放.png">
+                        阿甘正传 Forrest Gump</a>
+                    </div>
+                    <div>
+                        <span>豆瓣推荐指数&nbsp9.5</span>
+                    </div>
+                    <div>
+                        导演: 罗伯特·泽米吉斯<br/>
+                        主演: 汤姆·汉克斯 / 罗宾·怀特 / 加里·西尼斯<br/>
+                        类型: 剧情 / 爱情<br/>
+                        制片国家/地区: 美国<br/>
+                        片长: 142分钟<br/>
+                        上映日期: 1994-06-23
+                    </div>
+                    <div class="Movies_personal">
+                        <p>个人赏析:</p>
+                        <p> &emsp;&emsp;富有的人
+                            <br/>&emsp;&emsp;或许大家都知道这样一句话，或者认为这是这部电影里面最出名的一句话，就是阿甘拿着一盒巧克力坐在木凳上穿着破烂的球鞋，说人生就像一盒巧克力，你永远不知道下一颗巧克力是什么味道的。
+                            <br/>&emsp;&emsp;但是我觉得，阿甘似乎并没有被这些所谓的变数所影响，他活得很纯粹，很天真，甚至有的人认为他是傻子，
+                            <br/>&emsp;&emsp;没错貌似从科学的解释上他也的确貌似是一个傻子因为他的智商只有75，却恰巧符合了“大愚若智”，
+                            <br/>&emsp;&emsp;在我看来他是一位智者，一位忠诚，有爱的侣伴，一个孝顺的儿子，就像电影的最后他成了位富翁，世人的眼光并不影响他是“富有”的人
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Movies_introduce">
+                <div class="Movies_content">
+                    <div class="Movies_source">TOP4</div>
+                    <div class="Movies_post">
+                        <a href="https://movie.douban.com/subject/1295644/">
+                        <img style="height: 141px;" src="images/插图/影评/这个杀手不太冷.jpg"></a>
+                    </div>
+                    <div>
+                        <a href="https://movie.douban.com/subject/1295644/">
+                        <img style="width: 16px; vertical-align: text-top;" src="images/图标/播放.png">
+                        这个杀手不太冷 Léon</a>
+                    </div>
+                    <div>
+                        <span>豆瓣推荐指数&nbsp9.4</span>
+                    </div>
+                    <div>
+                        导演: 吕克·贝松<br/>
+                        主演: 让·雷诺 / 娜塔莉·波特曼 / 加里·奥德曼<br/>
+                        类型: 剧情 / 动作 / 犯罪<br/>
+                        语言: 英语 / 意大利语 / 法语<br/>
+                        片长: 110分钟<br/>
+                        上映日期: 1994-09-14(法国)
+                    </div>
+                    <div class="Movies_personal">
+                        <p>个人赏析:</p>
+                        <p>
+                            <br/>&emsp;&emsp;细火慢炖 细温慢煮
+                            <br/>&emsp;&emsp;乱世中的信任
+                            <br/>&emsp;&emsp;腥风血雨中的默契
+                            <br/>&emsp;&emsp;出于爱情高于亲情
+                            <br/>&emsp;&emsp;两个小孩的交错
+                            <br/>&emsp;&emsp;但
+                            <br/>&emsp;&emsp;人生如此
+                            <br/>&emsp;&emsp;有 为运
+                            <br/>&emsp;&emsp;无 为常
+                            <br/>&emsp;&emsp;区别于泰坦尼克的震撼
+                            <br/>&emsp;&emsp;区别于肖申克的尖锐
+                            <br/>&emsp;&emsp;风平浪静 交错而过
+                            <br/>&emsp;&emsp;仅一抹绿萝
+                            <br/>&emsp;&emsp;她继续她的生活
+                            <br/>&emsp;&emsp;他结束他的宿命
+                            <br/>&emsp;&emsp;不过如此
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Movies_introduce">
+                <div class="Movies_content">
+                    <div class="Movies_Jump">
+                        <span class="Movies_title">播放全片</span>
+                        <a href="https://www.bilibili.com/bangumi/play/ss25812?bsource=douban"><span><img src="images/图标/bilibili.png"></span> 哔哩哔哩</a>
+                    </div>
+                    <div class="Movies_source">TOP5</div>
+                    <div class="Movies_post">
+                        <a href="https://movie.douban.com/subject/1292064/">
+                        <img style="height: 141px;" src="images/插图/影评/楚门的世界.jpg"></a>
+                    </div>
+                    <div>
+                        <a href="https://movie.douban.com/subject/1292064/">
+                        <img style="width: 16px; vertical-align: text-top;" src="images/图标/播放.png">
+                        楚门的世界 The Truman Show</a>
+                    </div>
+                    <div>
+                        <span>豆瓣推荐指数&nbsp9.3</span>
+                    </div>
+                    <div>
+                        导演: 彼得·威尔<br/>
+                        主演: 金·凯瑞 / 劳拉·琳妮 / 艾德·哈里斯<br/>
+                        类型: 剧情 / 科幻<br/>
+                        制片国家/地区: 美国<br/>
+                        片长: 103分钟<br/>
+                        年份: 1998
+                    </div>
+                    <div class="Movies_personal">
+                        <p>个人赏析:</p>
+                        <p> &emsp;&emsp;走不出去的是楚门还是我们？
+                            <br/>&emsp;&emsp;好好读书，将来才可以考上好大学，考上好大学才能找到好工作，有了好的前途才会有好的婚姻，只有这样走，才会迎来成功！有钱，有地位，才是成功的人生！
+                            我们从小不是就是这么被教育的么？是不是觉得很自然呢？难道就真的只有这一条路么？当然不是，我们从小就被设定了，在每个人自己的“楚门世界”里。
+                            <br/>&emsp;&emsp;然而我们有梦，这是新航路开始的地方。但我们敢于追寻自己的梦想么？
+                            <br/>&emsp;&emsp;-我准备辞职，我还是热爱诗歌，我今后要专心文学创作
+                            <br/>&emsp;&emsp;-那怎么行？现在诗歌是冷门，不赚钱啊！你这样就等于废掉了啊，穷困潦倒的，以后怎么面对亲戚朋友啊？
+                            <br/>&emsp;&emsp;-唉，也对啊。。。
+                            <br/>&emsp;&emsp;但是，谁说人活着就是为了赚钱，为了他人口中的赞叹？
+                            <br/>&emsp;&emsp;被设定了，所有才使一切听起来那么的理所当然。。。
+                            <br/>&emsp;&emsp;当年的梦想呢？早已在地球另外一面的斐济岛上了。
+                            <br/>&emsp;&emsp;楚门走出来了，因为自己的梦想，因为不想在过这种平静而又安逸的生活，勇敢的令人流泪。走出去的不仅仅是楚门，还有龙套们对追求梦想的寄托，他们看到有人做了自己想做又不敢做的事。
+                            <br/>&emsp;&emsp;所以酒吧里的人疯狂，老太流泪，洗澡的人癫狂。
+                            <br/>&emsp;&emsp;但是这种勇气是普通人根本无法具备的！
+                            <br/>&emsp;&emsp;于是，保安说，还有别的什么节目？看看其他的吧。
+                            <br/>&emsp;&emsp;完成了对梦想的憧憬，普通人们回归各自的“楚门世界”，继续着平静而又安详的生活。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+
+        <!-- 主体右 -->
+        <div class="Movies_frame frame2" style="float: right;margin-right: 14%;">
+            <p class="Movies_tp">个人首推TOP5</p>
+            <div class="Movies_introduce">
+                <div class="Movies_content ">
+                    <div class="Movies_Jump">
+                        <span class="Movies_title">播放全片</span>
+                        <a href="https://www.iqiyi.com/v_19rrkbqj9o.html?vfm=m_331_dbdy&fv=4904d94982104144a1548dd9040df241"><span><img src="images/图标/爱奇艺.png"></span> 爱奇艺视频</a>
+                        <a href="https://www.bilibili.com/bangumi/play/ep71827?bsource=douban"><span><img src="images/图标/bilibili.png"></span> 哔哩哔哩</a>
+                    </div>
+                    <div class="Movies_source">TOP1</div>
+                    <div class="Movies_post">
+                        <a href="https://movie.douban.com/subject/25964071/">
+                        <img src="images/插图/影评/夏洛特烦恼.jpg"></a>
+                    </div>
+                    <div>
+                        <a href="https://movie.douban.com/subject/25964071/">
+                        <img style="width: 16px; vertical-align: text-top;" src="images/图标/播放.png">
+                        夏洛特烦恼</a>
+                    </div>
+                    <div>
+                        <span>推荐指数&nbsp9.1</span>
+                    </div>
+                    <div>
+                        导演: 闫非 / 彭大魔<br>
+                        主演: 沈腾 / 马丽 / 尹正 / 艾伦 / 王智 /等等...<br>
+                        类型: 喜剧 / 爱情<br>
+                        制片国家/地区: 中国大陆<br>
+                        片长: 104分钟<br>
+                        年份: 2015                        
+                    </div>
+                    <div class="Movies_personal">
+                        <p>个人赏析:</p>
+                        <p> &emsp;&emsp;乍看之下笑满面，仔细品来才看懂通篇的讽刺。
+                            <br/>&emsp;&emsp;大春，夏洛，秋雅，冬梅，一年四季！如人生四季，从张扬到袁华(圆滑)。大春一语知年少，夏洛一醒道青春，平淡只觉秋雅香，繁华才知冬梅好。
+                            <br/>&emsp;&emsp;大梦一场醒如初，读的出人生如梦，读得出梦如人生。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="Movies_introduce">
+                <div class="Movies_content ">
+                    <div class="Movies_Jump">
+                        <span class="Movies_title">播放全片</span>
+                        <a href="https://www.iqiyi.com/v_19rrhx0z4o.html?vfm=m_331_dbdy&fv=4904d94982104144a1548dd9040df241"><span><img src="images/图标/爱奇艺.png"></span> 爱奇艺</a>
+                        <a href="https://v.qq.com/x/cover/dr37tbvercpqsko.html?ptag=douban.movie"><span><img src="images/图标/腾讯视频.png"></span> 腾讯视频</a>
+                        <a href="https://v.youku.com/v_show/id_XMzU2MjYwNzQ0.html"><span><img src="images/图标/优酷.png"></span> 优酷</a>
+                    </div>
+                    <div class="Movies_source">TOP2</div>
+                    <div class="Movies_post">
+                        <a href="https://movie.douban.com/subject/1295124/">
+                        <img src="images/插图/影评/辛德勒的名单.jpg"></a>
+                    </div>
+                    <div>
+                        <a href="https://movie.douban.com/subject/1295124/">
+                        <img style="width: 16px; vertical-align: text-top;" src="images/图标/播放.png">
+                        辛德勒的名单 Schindler's List</a>
+                    </div>
+                    <div>
+                        <span>推荐指数&nbsp9.5</span>
+                    </div>
+                    <div>
+                        导演: 史蒂文·斯皮尔伯格<br>
+                        主演: 连姆·尼森 / 本·金斯利 / 拉尔夫·费因斯<br>
+                        类型: 剧情 / 历史 / 战争<br>
+                        制片国家/地区: 美国<br>
+                        片长: 195分钟<br>
+                        上映日期: 1993-11-30
+                    </div>
+                    <div class="Movies_personal">
+                        <p>个人赏析:</p>
+                        <p>
+                            &emsp;&emsp;“一流的智慧总是自相矛盾的”在辛德勒身上完美展现，他既自私自利、纵情声色犬马，又坚守善良的道德底线，彰显人性的光辉，这是一个真实的人，完美的人。
+                            <br/>&emsp;&emsp;他不是传统意义上的三好学生，但在关键时刻选择了做没有惠及个人利益，但却正确的事情。</p>
+                    </div>
+                </div>
+            </div>
+           
+
+            <div class="Movies_introduce">
+                <div class="Movies_content ">
+                    <div class="Movies_source">TOP3</div>
+                    <div class="Movies_post">
+                        <a href="https://movie.douban.com/subject/1292063/">
+                        <img src="images/插图/影评/美丽人生.jpg"></a>
+                    </div>
+                    <div>
+                        <a href="https://movie.douban.com/subject/1292063/">
+                        <img style="width: 16px; vertical-align: text-top;" src="images/图标/播放.png">
+                        美丽人生 La vita è bella</a>
+                    </div>
+                    <div>
+                        <span>推荐指数&nbsp9.5</span>
+                    </div>
+                    <div>
+                        导演: 罗伯托·贝尼尼<br>
+                        主演: 罗伯托·贝尼尼 / 尼可莱塔·布拉斯基<br>
+                        类型: 剧情 / 喜剧 / 爱情 / 战争<br>
+                        语言: 意大利语 / 德语 / 英语<br>
+                        片长: 116分钟<br>
+                        上映日期: 2020-01-03(中国大陆)
+                    </div>
+                    <div class="Movies_personal">
+                        <p>个人赏析:</p>
+                        <p>
+                            &emsp;&emsp;就算在最艰难最黑暗的日子里，就算了无希望，死亡近在眼前，他依然深爱着并用生命与智慧保护着他的妻子与儿子。
+                            <br>&emsp;&emsp;他的勇气与智慧，即使在战争的硝烟弥漫中，即使在集中营的暗无天日中，即使在最后枪声响起死亡来临的那一刻，依然闪现着耀眼夺目的光芒。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Movies_introduce">
+                <div class="Movies_content ">
+                    <div class="Movies_Jump">
+                        <span class="Movies_title">播放全片</span>
+                        <a href="https://www.iqiyi.com/v_19rrlpltbg.html?vfm=m_331_dbdy&fv=4904d94982104144a1548dd9040df241"><span><img src="images/图标/爱奇艺.png"></span> 爱奇艺</a>
+                        <a href="https://v.qq.com/x/cover/fhe2h7sop52qzza.html?ptag=douban.movie"><span><img src="images/图标/腾讯视频.png"></span> 腾讯视频</a>
+                    </div>
+                    <div class="Movies_source">TOP4</div>
+                    <div class="Movies_post">
+                        <a href="https://movie.douban.com/subject/25662329/">
+                        <img src="images/插图/影评/疯狂动物城.jpg"></a>
+                    </div>
+                    <div>
+                        <a href="https://movie.douban.com/subject/25662329/">
+                        <img style="width: 16px; vertical-align: text-top;" src="images/图标/播放.png">
+                        疯狂动物城 Zootopia</a>
+                    </div>
+                    <div>
+                        <span>推荐指数&nbsp9.4</span>
+                    </div>
+                    <div>
+                        导演: 拜伦·霍华德 / 瑞奇·摩尔 / 杰拉德·布什<br>
+                        主演: 金妮弗·古德温 / 杰森·贝特曼 <br>
+                        类型: 喜剧 / 动画 / 冒险<br>
+                        制片国家/地区: 美国<br>
+                        片长: 109分钟(中国大陆)<br>
+                        上映日期: 2016-03-04
+                    </div>
+                    <div class="Movies_personal">
+                        <p>个人赏析:</p>
+                        <p>
+                            &emsp;&emsp;Zootopia，如名字一样，是动物的乌托邦。
+                            <br>&emsp;&emsp;这里兔子可以当警察，狐狸也可也做良民，鼩鼱可以当教父，绵羊也能成为幕后黑手。
+                            <br>&emsp;&emsp;每个人都能自由地成为他们想成为的样子。
+                            <br>&emsp;&emsp;也有人说这样的世界只能出现在动画片中，这部电影只是为了维持政治正确而存在。没错，我们的世界没有那么美好。
+                            <br>&emsp;&emsp;如同草食动物一样的弱者踏入社会，也许瞬间就会被残酷的现实打击得体无完肤。
+                            <br>&emsp;&emsp;这个世界，远比我们看到的要更加政治不正确——
+                            <br>&emsp;&emsp;那么很好，打破公主王子的美梦就是第一步。当我们开始看到那些我们司空见惯的偏见，当我们意识到那些“无意识的假设”都是错误的之后，才能去改变它。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Movies_introduce">
+                <div class="Movies_content ">
+                    <div class="Movies_Jump">
+                        <span class="Movies_title">播放全片</span>
+                        <a href="https://www.iqiyi.com/v_19rrk3nlys.html?vfm=m_331_dbdy&fv=4904d94982104144a1548dd9040df241"><span><img src="images/图标/爱奇艺.png"></span> 爱奇艺</a>
+                        <a href="https://v.qq.com/x/cover/vbr7hkoebjpsrxb.html?ptag=douban.movie"><span><img src="images/图标/腾讯视频.png"></span> 腾讯视频</a>
+                    </div>
+                    <div class="Movies_source">TOP5</div>
+                    <div class="Movies_post">
+                        <a href="https://movie.douban.com/subject/1849031/">
+                        <img src="images/插图/影评/当幸福来敲门.jpg"></a>
+                    </div>
+                    <div>
+                        <a href="https://movie.douban.com/subject/1849031/">
+                        <img style="width: 16px; vertical-align: text-top;" src="images/图标/播放.png">
+                        当幸福来敲门 The Pursuit of Happyness</a>
+                    </div>
+                    <div>
+                        <span>推荐指数&nbsp9.1</span>
+                    </div>
+                    <div>
+                        导演: 加布里埃莱·穆奇诺<br>
+                        主演: 威尔·史密斯 / 贾登·史密斯 <br>
+                        类型: 剧情 / 家庭 / 传记<br>
+                        制片国家/地区: 美国<br>
+                        片长: 117分钟<br>
+                        上映日期: 2008-01-17(
+                    </div>
+                    <div class="Movies_personal">
+                        <p>个人赏析:</p>
+                        <p>
+                            &emsp;&emsp;一个虔诚的落水者希望上帝能救他。
+                            <br>&emsp;&emsp;一艘船过去了，他拒绝被救，说，上帝会来救我的。第二艘船又过去，他仍然以同样的理由拒绝被救。
+                            <br>&emsp;&emsp;后来落水者溺死了。天堂上，他不服气问上帝，万能的主啊，你为什么不来救我？
+                            <br>&emsp;&emsp;上帝回答道，为了救你，我派出了两条船。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+        <!-- 返回顶部 -->
+        <div><p class="dvp">返回顶部</p></div>
+
+        <script>
+            $(".Movies_introduce").mousemove(function() {
+                $(".Movies_introduce").removeClass("Movies_personalto")
+                $(this).addClass("Movies_personalto")
+            })
+
+        </script>
+</body>
+</html>

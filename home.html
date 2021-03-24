@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初始</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+
+    <style>
+		body, html {
+			padding: 0;
+			margin: 0;
+			font-family: 微软雅黑;
+		}
+		a {
+			text-decoration: none;
+		}
+		hr {
+			background-color: blue;
+		}
+        .initial_cover {
+			background-image: url(images/背景/起始页默认背景.gif);
+            display: block;
+            position: fixed;
+            z-index: 900;
+			width: 100%;
+			text-align: center;
+            max-width: none;
+            height: 100%;
+			background-size: cover;
+        }
+        .initial_subject{
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+		.initial_inverted {
+		    font-weight: 100;
+		    text-align: center;
+		    color: #fff;
+			display: table-cell;
+			vertical-align: middle;
+			padding: 0;
+		}
+		.initial_inverted a {
+		    color: #fff;
+		}
+		.initial_content {
+		    max-width: 620px;
+		    margin: 0 auto;
+		}
+		.initial_img, .initial_circle {
+			position: relative;
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			border-radius : 100%;
+			border : 3px solid rgba(238, 238, 238, 0.5);
+			box-shadow:0 0 10px 5px rgb(112, 112, 112);
+			left: -3px;
+			bottom: 3px;
+		}
+		.initial_circle:hover{
+			border : 3px solid rgba(238, 238, 238, 0);
+			box-shadow:0 0 10px 5px rgba(112, 112, 112, 0);
+		}
+		.initial_circle{
+			width: 120px;
+			height: 120px;
+			perspective:400px;
+			margin: 0 auto;
+			-webkit-perspective: 900px;
+			perspective: 900px;
+			animation: cir 3s normal forwards ease-in-out; 
+		}
+		@keyframes cir{
+			0%{
+				transform: translateY(-815px);
+			}
+			50%{
+				transform: translateY(-815px);
+			}
+			95%{
+				transform: translateY(15px);
+			}
+			100%{
+				transform: translateY(0px);
+			}
+		}
+
+		.initial_subtitle , .initial_hr , .cover_description, .navigation{
+			animation: cirto 3s normal forwards ease-in-out; 
+		}
+
+		@keyframes cirto{
+			0%{
+				transform: scale(0);  
+			}
+			50%{
+				transform: scale(0);  
+			}
+			100%{
+				transform: scale(1);  
+			}
+		}
+
+		.navigation{
+			padding: 0;
+		}
+		.navigation li{
+			display: inline-block;
+			margin-left: 0;
+			line-height: 1em;
+		}
+		.navigation li a{
+			display: inline-block;
+			position: relative;
+			margin-right: 0;
+			padding: 5px;
+			width: 100%;
+			font-size: .6em;
+			text-shadow: none;
+			border-color: #666;
+			color: #f5f5f5;
+		}
+		.initial_title {
+		    margin: 20px 0 5px;
+		    font-size: 1.8em;
+		    letter-spacing: 4px;
+		    color: #fff;
+		}
+		.initial_hr{
+		    width: 50%;
+		    margin: 20px auto;
+		    border-top: 1px solid hsla(0,0%,100%,.14);
+		}
+		.initial_subtitle {
+		    font-size: .6em;
+		    font-weight: lighter;
+		    letter-spacing: 3px;
+		    color: #ccc;
+		    -webkit-font-smoothing: antialiased;
+		}
+		
+
+		.initial_circle>div {
+			transition:all 1s;
+			/*背面不可视*/
+			backface-visibility:hidden;
+		}
+
+		.initial_circle:hover .forward {
+			transform:rotateY(-180deg);
+		}
+		
+		.tips {
+			border-radius: 100%;
+			width: 180px;
+			height: 120px;
+			color:#fff;
+			background-image: url(images/背景/初始页背景.jpg);
+			transform:rotateY(180deg);
+			transition:all 1s;
+			position:absolute;
+			top:0px;
+			left:-30px;
+		}
+		.tips p{
+			text-align: center;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.initial_circle:hover .tips {
+			transform:none;
+			box-shadow:0 0 10px 5px pink;
+			border-radius:10px;
+		}
+
+		.hf{
+			position:fixed;
+			z-index: 1000;
+			top: 42%;
+			right: 0px;
+			writing-mode: vertical-rl;
+			margin: 10px;
+			padding: 10px;
+			border-radius: 100%;
+			background-color: rgba(207, 214, 220, 0.9);
+		}
+		
+    </style>
+
+</head>
+<body>
+    
+
+    <header class="initial_cover">
+        <div class="initial_subject">
+            <div class="initial_inverted">
+                <div class="initial_content">
+                    <div class="initial_circle">
+                        <div class="forward">
+                            <img class="initial_img" src="images/头像.jpg">
+						</div>
+						<div class="tips">
+							<p>小破站<br/>最右边可以换背景哦<br/>然后<br/>欢迎光临</p>
+						</div>
+                    </div> 
+                    <h1 class="initial_title">
+                        <a id="aa"></a>
+                    </h1> 
+                    <span class="initial_subtitle">个人站</span> 
+                    <hr class="initial_hr"> 
+                    <p class="cover_description">欢迎来到我的个人站~</p> 
+                    <hr class="initial_hr" style="width: 15%;">
+					<ul class="navigation">
+						<li><a href="index.html">博客主页</a></li>
+						<li><a href="Work_study.html">一篇文字</a></li> 
+						<li><a href="other.html">历程</a></li> 
+						<li><a href="Movies.html">影视推荐</a></li>
+						<li><a href="tour.html">留痕</a></li>
+						<li><a href="say.html">留言板</a></li>
+						<li><a href="next_door.html">隔壁村子</a></li>
+						<li><a href="about_me.html">关于我</a></li>
+					</ul>
+                </div>
+            </div>
+        </div>
+	</header>
+
+	<div>
+		<p class="hf" id="imgt1"></p>
+		<p class="hf" style="margin-top: 40px;background-color: rgba(228, 233, 139, 0.85);" id="imgt2"></p>
+		<p class="hf" style="margin-top: 70px;background-color: rgb(255, 153, 0,0.7);" id="imgt3"></p>
+		<p class="hf" style="margin-top: 100px;background-color: rgb(22, 227, 237,0.9);" id="imgt4"></p>
+	</div>
+
+
+	<script>
+		var index = 0;
+		var word = '不高兴先生'//输入文本
+		function type() {
+			setTimeout( function(){
+				//获取id，为其添加Word内容（文本），
+				document.getElementById("aa").innerText = word.substring(0, index++);//初始为0，逐步增字。
+			}, 0);//延迟为0	
+			
+		}
+		setInterval(type, 300);//总时长
+
+		$(function(){
+			$("#imgt1").click (
+				function () { 
+					$(".initial_cover").css("background-image","url(images/背景/初始页背景.jpg)"); 
+				}
+			);
+			$("#imgt2").click (
+				function () { 
+					$(".initial_cover").css("background-image","url(images/背景/初始页背景2.jpg)"); 
+				}
+			);
+			$("#imgt3").click (
+				function () { 
+					$(".initial_cover").css("background-image","url(images/背景/初始页背景3.jpg)"); 
+				}
+			);
+			$("#imgt4").click (
+				function () { 
+					$(".initial_cover").css("background-image","url(images/背景/首页背景.jpg)"); 
+				}
+			);
+		});
+	</script>
+</body>
+</html>

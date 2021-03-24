@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秃头日记</title>
+
+    <link href="css/Font_Style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/All_Styles.css">
+    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+	<style>
+		body{
+			padding: 0px;
+			margin: 0px;
+		}
+		.journal_head::before{
+			position: absolute;
+			content: "";
+			width: 9px;
+			height: 9px;
+			background-color: #bdbdbd;
+			border-radius: 9px;
+			box-shadow: 0px 0px 2px 8px #f7f7f7;
+		}
+		.journal_topic h1{
+			text-align: center;
+			font-size: 3rem;
+			margin-bottom: 20px;
+			color: #000;
+		}
+		.journal_topic p{
+			text-align: center;
+			font-size: 1rem;
+			max-width: 90%;
+			margin: auto;
+			margin-bottom: 45px;
+			color: #000;
+		}
+
+		.journal_topic{
+			animation: Fall 1s normal forwards ease-in-out; 
+		}
+		@keyframes Fall{
+			0%{
+				transform: translateY(-215px);
+			}
+			100%{
+				transform: translateY(0px);
+			}
+		}
+		.journal_wrapper{
+			animation: Fall1 1s normal forwards ease-in-out; 
+		}
+		@keyframes Fall1{
+			0%{
+				transform: scale(0);
+			}
+			100%{
+				transform: scale(1);
+			}
+		}
+		.journal_step1 ,.journal_step3,.journal_step5{
+			animation: Fallto1 1.5s normal forwards ease-in-out; 
+		}
+		@keyframes Fallto1{
+			0%{
+				transform: translateX(600px);
+				opacity:0;
+			}
+			70%{
+				opacity:0;
+			}
+    		100%{
+				transform: translateX(0px);
+				opacity:1;
+			}
+		}
+
+		.journal_step2 ,.journal_step4,.journal_step6{
+			animation: Fallto2 1.5s normal forwards ease-in-out; 
+		}
+		@keyframes Fallto2{
+			0%{
+				transform: translateX(-600px);
+				opacity:0;
+			}
+			70%{
+				opacity:0;
+			}
+    		100%{
+				transform: translateX(0px);
+				opacity:1;
+			}
+		}
+
+		.journal_card:nth-child(1) {
+			order: 1;
+		}
+
+		.journal_card:nth-child(2) {
+			order: 4;
+		}
+
+		.journal_card:nth-child(3) {
+			order: 2;
+		}
+
+		.journal_card:nth-child(4) {
+			order: 5;
+		}
+
+		.journal_card:nth-child(5) {
+			order: 3;
+		}
+
+		.journal_card:nth-child(6) {
+			order: 6;
+		}
+
+		section {
+			font-family: Roboto;
+		}
+
+		#journal_timeline {
+		padding: 100px 0;
+		}
+
+		.journal_wrapper {
+			position: relative;
+			background-color: #f5f5f5a3;
+			border: 1px solid #d2d2d2;
+			box-shadow: 0 0 1px 2px #e8e8e8;
+			border-radius: 100px;
+			display: flex;
+			flex-flow: column wrap;
+			width: 1170px;
+			height: 1900px;
+			margin: 0 auto;
+		}
+
+		.journal_wrapper::after {
+			z-index: 1;
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 50%;
+			border-left: 1px solid #bdbdbd;
+		}
+
+		.journal_card {
+			position: relative;
+			display: block;
+			margin: 10px auto 80px;
+			max-width: 94%;
+			z-index: 2;
+		}
+
+		.journal_card {
+			max-width: 450px;
+			margin: 90px;
+			margin-top: 45px;
+			margin-bottom: 45px;
+		}
+		.journal_card:nth-child(odd) {
+			margin-right: 45px;
+		}
+		.journal_card:nth-child(odd) .journal_head::after {
+			border-left-width: 15px;
+			border-left-style: solid;
+			left: 100%;
+		}
+		.journal_card:nth-child(odd) .journal_head::before {
+			left: 491.5px;
+		}
+		.journal_card:nth-child(even) {
+			margin-left: 45px;
+		}
+		.journal_card:nth-child(even) .journal_head::after {
+			border-right-width: 15px;
+			border-right-style: solid;
+			right: 100%;
+		}
+		.journal_card:nth-child(even) .journal_head::before {
+			right: 489.5px;
+		}
+		.journal_card:nth-child(2) {
+			margin-top: 180px;
+		}
+		.journal_head {
+			display: flex;
+			align-items: center;
+			color: #fff;
+		}
+		.journal_head p{
+			border-radius: 10px;
+			display: inline;
+			float: left;
+			margin: 15px;
+			padding: 10px;
+			font-size: 35px;
+			line-height: 35px;
+			font-weight: 600;
+			background: rgba(0, 0, 0, 0.17);
+		}
+
+		.journal_head h2 {
+			letter-spacing: 2px;
+			padding-bottom: 6px;
+			font-size: 165%;
+			line-height: 1.2rem;
+		}
+
+		.journal_head h2 span {
+			display: block;
+			font-size: 0.8rem;
+		}
+
+		.journal_body {
+			border-bottom-right-radius:2em;
+			border-bottom-left-radius:2em;
+			margin-bottom: -40px;
+			background: #ffffffbb;
+			border: 1px solid rgba(191, 191, 191, 0.4);
+			border-top: 0;
+			padding: 15px;
+		}
+
+		.journal_body p {
+			color: rgb(83, 83, 83);
+			line-height: 18px;
+			margin-bottom: 15px;
+			font-size: 15px;
+		}
+		.journal_body img {
+			border-radius: 20px;
+			display: block;
+			width: 100%;
+		}
+		.journal_step1 {
+			border-radius: 20px;
+			background-color: #46b8e9bb;
+		}
+		.journal_step1 .journal_head::after {
+			border-color: #46b8e9bb;
+		}
+		.journal_step2 {
+			border-radius: 20px;
+			background-color: #3ee9d1bb;
+		}
+		.journal_step2 .journal_head::after {
+			border-color: #3ee9d1bb;
+		}
+		.journal_step3 {
+			border-radius: 20px;
+			background-color: #ce43ebbb;
+		}
+		.journal_step3 .journal_head::after {
+			border-color: #ce43ebbb;
+		}
+		.journal_step4 {
+			border-radius: 20px;
+			background-color: #4d92ebbb;
+		}
+		.journal_step4 .journal_head::after {
+			border-color: #4d92ebbb;
+		}
+		.journal_step5 {
+			border-radius: 20px;
+			background-color: #46b8e9bb;
+		}
+		.journal_step5 .journal_head::after {
+			border-color: #46b8e9bb;
+		}
+		.journal_step6 {
+			border-radius: 20px;
+			background-color: #46b8e9bb;
+		}
+		.journal_step6 .journal_head::after {
+			border-color: #46b8e9bb;
+		}
+	</style>
+</head>
+<body class="gdt"  style="background-image: url(images/背景/首页背景.jpg);background-attachment: fixed;">
+        
+	<!-- 导航栏 -->
+	<nav class="head">
+        <div class="top-menus" style="z-index: 100;">
+            <div class="frame">
+                <div class="carrier">
+                    <ul>
+                        <li class=""><a href="index.html">主页</a></li>
+                        <li class=""><a href="Work_study.html">一篇文字</a></li>
+                        <li class="current"><a href="other.html">历程</a></li>
+                        <li class=""><a href="next_door.html">隔壁村子</a></li>
+                        <li class=""><a href="about_me.html">关于我</a></li>
+                    </ul>
+                </div>
+                <div class="carrier" style="width: 41%;">
+                    <ul style=" text-align: right;">
+                        <li>最后一次更新于：<a href="home.html">2020/11/19 (点此返回初始页)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+        
+		<!-- 主体 -->
+		
+		<section id="journal_timeline">
+			<div class="journal_topic">
+				<h1>秃头日记</h1>
+				<p>曾梦想仗剑走天涯，后来被社会打折了腿。</p>
+			</div>
+			
+			<div class="journal_wrapper" >
+				<div class="journal_card journal_step1">
+					<div class="journal_head">
+						<p>01</p>
+						<h2><span>我一直在路上</span> 永不言弃</h2>
+					</div>
+					<div class="journal_body">
+						<p>
+							&emsp;&emsp;趁着年轻生猛，我要再和生活死磕几年。<br/>
+							&emsp;&emsp;要么我就毁灭，要么我就铸就辉煌。<br/>
+							&emsp;&emsp;如果有一天，你发现我在平庸面前低了头，那么请向我开炮。<br/><br/>
+							——凯鲁亚克《在路上》</p>
+						<img src="images/历程/在路上.jpg">
+					</div>
+				</div>
+		
+				<div class="journal_card journal_step2">
+					<div class="journal_head">
+						<p>02</p>
+						<h2><span>前行</span> 关于博客</h2>
+					</div>
+					<div class="journal_body">
+						<p>
+							&emsp;&emsp;有人说博客已经过时了，现在大多数人都用手机看朋友圈、微信等。是的，但是每次在百度上找到一篇优质的资料，我发现是出自个人博客的概率很大。<br/>
+							&emsp;&emsp;曾经问过一个大佬在学习上又没有什么习惯或者技巧，他说“我每当解决一个问题之后都会总结并记录下来”。<br/>
+							&emsp;&emsp;是的自己也深有体会，每次百度半天解决的问题，不做记录的话过一段时间再遇到一样的问题，还是会去百度花上半天去找，可能这就是平常人与大佬们的区别吧。<br/><br/>
+						</p>
+						<img src="images/历程/前行.jpg">
+					</div>
+				</div>
+		
+				<div class="journal_card journal_step3">
+					<div class="journal_head">
+						<p>03</p>
+						<h2><span>进步</span> 博客的成长</h2>
+					</div>
+					<div class="journal_body">
+						<p>
+							&emsp;&emsp;对任何渴望进步的人来说，写博客/文章/回答对自己的成长帮助都是巨大的。<br/>
+							&emsp;&emsp;频率和数量不必过分强求，有话要说就写写，没事就歇歇，随意点。因为坚持写作的那一刻起，你就已经开始受益。<br/><br/>
+						</p>
+						<img src="images/历程/进步.jpg">
+					</div>
+				</div>
+		
+				<div class="journal_card journal_step4">
+					<div class="journal_head">
+						<p>04</p>
+						<h2><span>利益</span> 价值？</h2>
+					</div>
+					<div class="journal_body">
+						<p>
+							&emsp;&emsp;做博客相关的利益意义就在于“渲染人设IP”和“关键词布局”<br/>
+
+							&emsp;&emsp;它不但不会冲突、且还是一个相辅相成的结构.......<br/>
+							
+							&emsp;&emsp;通过关键词布局带来源源不断的流量......<br/>
+							
+							&emsp;&emsp;通过人设渲染打造一流口碑引起广泛传播........<br/><br/>
+						</p>
+						<img src="images/历程/利益.jpg">
+					</div>
+				</div>
+		
+				<div class="journal_card journal_step5">
+					<div class="journal_head">
+						<p>05</p>
+						<h2><span>新时代</span> 流量</h2>
+					</div>
+					<div class="journal_body">
+						<p>
+							&emsp;&emsp;虽然现在是自媒体、短视频、直播的天下，但是搜索引擎作为当下流量入口之一，仍然占据着不小的流量，作为品牌，谁会嫌弃流量呢？<br/>
+							&emsp;&emsp;因此我觉得，当下个人网站主要是补充自己的品牌的流量矩阵。让更多的人可以看到自己的品牌，了解自己。<br/><br/>
+						</p>
+						<img src="images/历程/价值.png">
+					</div>
+				</div>
+
+				<div class="journal_card journal_step6">
+					<div class="journal_head">
+						<p>06</p>
+						<h2><span>启程</span> 坚持</h2>
+					</div>
+					<div class="journal_body">
+						<p>
+							&emsp;&emsp;个人认为，<br/>
+							&emsp;&emsp;自己搭建一个博客不用想太多，有很多人搭建博客，<br/>
+							&emsp;&emsp;想域名过了一周了，<br/>
+							&emsp;&emsp;想什么领域又一周了，<br/>
+							&emsp;&emsp;再想一下用什么程序搭建又一周了！<br/>
+							&emsp;&emsp;坚持写作的那一刻起，你就已经开始受益。<br/><br/>
+						</p>
+						<img src="images/历程/启程.jpg">
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<script>
+			// $(function(){
+			// 	$(".journal_head").css("border-top-left-radius","2em");
+			// });
+		</script>
+
+        <!-- 返回顶部 -->
+        <div><p class="dvp">返回顶部</p></div>
+</body>
+</html>
