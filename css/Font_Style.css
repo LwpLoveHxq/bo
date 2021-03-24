@@ -1,0 +1,13 @@
+/* 字体样式 */
+@font-face {
+        font-family: 'Sacramento';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Sacramento'), local('Sacramento-Regular'), url(https://fonts.gstatic.com/s/sacramento/v8/buEzpo6gcdjy0EiZMBUG4C0f_Q.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Josefin Slab';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Josefin Slab Bold'), local('JosefinSlab-Bold'), url(https://fonts.gstatic.com/s/josefinslab/v11/lW-mwjwOK3Ps5GSJlNNkMalvESu6Kerl.woff2) format('woff2');
+    }
